@@ -12,3 +12,6 @@ struct HomeObject: Decodable {
     let title : String
 }
 
+extension HomeObject: Hashable {
+    
+}

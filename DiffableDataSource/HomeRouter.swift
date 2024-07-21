@@ -47,6 +47,8 @@ extension HomeRouter : HomeRouter_InputsDelegate {
     }
 }
 
+
+//MARK : This view controller just created to test router functionality
 class TestVC : UIViewController {
     
     var labelText : String?

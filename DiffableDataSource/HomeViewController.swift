@@ -14,11 +14,13 @@ protocol HomeView_InputsDelegate: AnyObject {
 protocol HomeView_Outputs_Delegate: AnyObject {
     func viewDidLoad()
     func didSelectRowAt(indexPath: IndexPath)
-    func setTableViewDatasSource(tableView : UITableView)
+    
+    //MARK: DiffableDataSource
+    func setDiffableDataSource(tableView : UITableView)
 }
 
 class HomeViewController: UIViewController {
-    
+
     private var homeObjects = [HomeObject]()
     var presenter : HomeView_Outputs_Delegate?
     
@@ -43,8 +45,9 @@ class HomeViewController: UIViewController {
         setTableViewDataSource()
     }
     
-    private func setTableViewDataSource() {
-        presenter?.setTableViewDatasSource(tableView: tableView)
+    private func setTableViewDataSource() {        
+        //MARK: DiffableDataSource
+        presenter?.setDiffableDataSource(tableView: tableView)
     }
     
     private func addSubviews() {
